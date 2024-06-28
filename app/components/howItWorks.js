@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
 
 const HowItWorks = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -36,7 +37,7 @@ const HowItWorks = () => {
       image: "/images/4.jpg",
     },
     {
-      text: "Congrats! Your Tonkeeper Battery is now charged and will replace gas fees",
+      text: "Congrats! Your Tonkeeper Battery is now charged!",
       image: "/images/6.jpg",
     },
   ];
@@ -69,6 +70,13 @@ const HowItWorks = () => {
     }, 300);
   };
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
   return (
     <>
       {/* How it works */}
@@ -79,7 +87,7 @@ const HowItWorks = () => {
         <div className="p-2 px-5">
           <div className="flex items-center text-center ">
             <div className="flex flex-col items-center w-full">
-              <div className="min-h-[80px] md:min-h-[52px] lg:min-h-[60px] flex w-full justify-between items-start gap-4">
+              <div className="min-h-[78px] md:min-h-[40px] lg:min-h-[58px] flex w-full justify-between items-start gap-4">
                 <button
                   onClick={handlePrev}
                   disabled={currentStep === 0}
@@ -111,7 +119,10 @@ const HowItWorks = () => {
                   &rarr;
                 </button>
               </div>
-              <div className="w-[280px] h-[560px] relative flex justify-center items-center bg-gray-900 rounded-3xl shadow-xl overflow-hidden">
+              <div
+                className="w-[280px] h-[560px] relative flex justify-center items-center bg-gray-900 rounded-3xl shadow-xl overflow-hidden"
+                {...swipeHandlers}
+              >
                 {steps[currentStep].image && (
                   <div
                     className={`p-4 flex justify-center transition-opacity duration-300 ${
@@ -120,7 +131,7 @@ const HowItWorks = () => {
                   >
                     <Image
                       src={steps[currentStep].image}
-                      layout="fill"
+                      fill={true}
                       alt="Tonkeeper Battery Steps"
                       className="rounded-3xl shadow-xl"
                     />

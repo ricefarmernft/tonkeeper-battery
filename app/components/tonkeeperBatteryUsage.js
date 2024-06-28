@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
 
 const TonkeeperBatteryUsage = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -8,15 +9,15 @@ const TonkeeperBatteryUsage = () => {
 
   const steps = [
     {
-      text: "To view your battery usage, click on the battery icon from the main wallet screen",
+      text: "To view your battery usage, click on the battery icon",
       image: "/images/5.jpg",
     },
     {
-      text: "Here you can view how many charges your battery is supplied with",
+      text: "Here you can view how many charges your battery has",
       image: "/images/6.jpg",
     },
     {
-      text: "By clicking on 'Battery Settings', you can enable or disable charges for TON blockchain transactions",
+      text: "On 'Battery Settings', you can enable or disable charges for transactions",
       image: "/images/7.jpg",
     },
     {
@@ -64,6 +65,13 @@ const TonkeeperBatteryUsage = () => {
     }, 300);
   };
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
+
   return (
     <>
       {/* How it works */}
@@ -74,7 +82,7 @@ const TonkeeperBatteryUsage = () => {
         <div className="p-2 px-5">
           <div className="flex items-center text-center ">
             <div className="flex flex-col items-center w-full">
-              <div className=" min-h-[102px] md:min-h-[82px] lg:min-h-[88px] flex w-full justify-between items-start gap-4">
+              <div className="min-h-[82px] lg:min-h-[62px] flex w-full justify-between items-start gap-4">
                 <button
                   onClick={handlePrev}
                   disabled={currentStep === 0}
@@ -106,7 +114,10 @@ const TonkeeperBatteryUsage = () => {
                   &rarr;
                 </button>
               </div>
-              <div className="w-[280px] h-[560px] relative flex justify-center items-center bg-gray-900 rounded-3xl shadow-xl overflow-hidden">
+              <div
+                className="w-[280px] h-[560px] relative flex justify-center items-center bg-gray-900 rounded-3xl shadow-xl overflow-hidden"
+                {...swipeHandlers}
+              >
                 {steps[currentStep].image && (
                   <div
                     className={`p-4 flex justify-center transition-opacity duration-300 ${
@@ -115,7 +126,7 @@ const TonkeeperBatteryUsage = () => {
                   >
                     <Image
                       src={steps[currentStep].image}
-                      layout="fill"
+                      fill={true}
                       alt="Tonkeeper Battery Steps"
                       className="rounded-3xl shadow-xl"
                     />
