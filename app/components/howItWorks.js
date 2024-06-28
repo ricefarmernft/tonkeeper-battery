@@ -73,13 +73,13 @@ const HowItWorks = () => {
     <>
       {/* How it works */}
       <div className="unit-container">
-        <div className="text-2xl font-semibold p-2 flex justify-center">
+        <div className="text-2xl lg:text-4xl font-semibold p-2 flex justify-center">
           How does it work?
         </div>
         <div className="p-2 px-5">
           <div className="flex items-center text-center ">
             <div className="flex flex-col items-center w-full">
-              <div className="min-h-[80px] md:min-h-[62px] lg:min-h-[48px] flex w-full justify-between items-start gap-4">
+              <div className="min-h-[80px] md:min-h-[52px] lg:min-h-[60px] flex w-full justify-between items-start gap-4">
                 <button
                   onClick={handlePrev}
                   disabled={currentStep === 0}
@@ -90,7 +90,7 @@ const HowItWorks = () => {
                   &larr;
                 </button>
                 <div
-                  className={`w-full text-start transition-opacity duration-300 ${
+                  className={`w-full text-start text-base lg:text-xl transition-opacity duration-300 ${
                     isAnimating ? "opacity-25" : "opacity-100"
                   }`}
                 >

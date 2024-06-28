@@ -12,10 +12,10 @@ export default function Home() {
         <div className="flex flex-col justify-center text-center">
           <div className="flex justify-center">
             <Logo />
-            <div className="text-5xl font-bold pl-1">Tonkeeper</div>
+            <div className="text-5xl lg:text-8xl font-bold pl-1">Tonkeeper</div>
           </div>
 
-          <div className="text-5xl font-semibold text-green-400 min-h-[48px]">
+          <div className="text-5xl lg:text-8xl font-semibold text-green-400 min-h-[48px]">
             <BatteryTypewriter />
           </div>
         </div>
@@ -25,16 +25,16 @@ export default function Home() {
       </div>
       {/* What is Battery */}
       <div className="unit-container">
-        <div className="text-2xl font-semibold p-2 flex justify-center">
+        <div className="text-2xl lg:text-4xl font-semibold p-2 flex justify-center">
           What is Tonkeeper Battery?
         </div>
-        <div className="text-base font-medium p-2 px-5">
+        <div className="text-base lg:text-xl font-medium p-2 px-5">
           Tonkeeper Battery is a simple way to pay for transactions on the TON
           blockchain. Instead of needing native coins (TON) to interact with the
           network, you can instead use your bank card or stablecoins.
         </div>
-        <div className="text-xl font-medium p-2 px-5">Features</div>
-        <ol className="list-decimal list-inside pb-2 px-5">
+        <div className="text-xl lg:text-2xl font-medium p-2 px-5">Features</div>
+        <ol className="list-decimal list-inside text-base lg:text-xl pb-2 px-5">
           <li>Gasless payments</li>
           <li>Token swaps</li>
           <li>NFT transfers</li>
