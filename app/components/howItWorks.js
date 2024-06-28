@@ -78,7 +78,7 @@ const HowItWorks = () => {
         <div className="p-2 px-5">
           <div className="flex items-center text-center ">
             <div className="flex flex-col items-center w-full">
-              <div className=" min-h-[62px] flex w-full justify-between items-start gap-4">
+              <div className="min-h-[80px] md:min-h-[62px] lg:min-h-[48px] flex w-full justify-between items-start gap-4">
                 <button
                   onClick={handlePrev}
                   disabled={currentStep === 0}
@@ -110,7 +110,7 @@ const HowItWorks = () => {
                   &rarr;
                 </button>
               </div>
-              <div className="w-[340px] h-[660px] relative flex justify-center items-center bg-gray-900 rounded-3xl shadow-xl overflow-hidden">
+              <div className="w-[280px] h-[560px] relative flex justify-center items-center bg-gray-900 rounded-3xl shadow-xl overflow-hidden">
                 {steps[currentStep].image && (
                   <div
                     className={`p-4 flex justify-center transition-opacity duration-300 ${
