@@ -1,10 +1,9 @@
-"use client";
 import Battery from "./components/battery";
 import Logo from "./components/Logo";
 import HowItWorks from "./components/howItWorks";
 import TonkeeperBatteryUsage from "./components/tonkeeperBatteryUsage";
 import BatteryTypewriter from "./components/batteryTypewriter";
-import Image from "next/image";
+import FooterPage from "./components/footerPage";
 
 export default function Home() {
   return (
@@ -46,6 +45,8 @@ export default function Home() {
       <HowItWorks />
       {/* Battery Usage */}
       <TonkeeperBatteryUsage />
+      {/* Footer */}
+      <FooterPage />
     </>
   );
 }
