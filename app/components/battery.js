@@ -18,19 +18,23 @@ const Battery = () => {
         <div className="h-full w-full flex flex-col gap-6 ">
           <button
             onClick={() => increaseCharge(25)}
-            className="recharge-button"
+            className="recharge-button shadow-2xl"
           >
             Recharge (Lg)
           </button>
           <button
             onClick={() => increaseCharge(12)}
-            className="recharge-button"
+            className="recharge-button shadow-2xl"
           >
             Recharge (Med)
           </button>
-          <button onClick={() => increaseCharge(5)} className="recharge-button">
+          <button
+            onClick={() => increaseCharge(5)}
+            className="recharge-button shadow-2xl"
+          >
             Recharge (Sm)
           </button>
+          {/* Battery SVG */}
         </div>
         <div className="w-full flex justify-center">
           <svg
@@ -61,15 +65,25 @@ const Battery = () => {
               fill="#45AEF5"
             />
           </svg>
+          {/* Decrease CHarge Buttons */}
         </div>
         <div className="h-full w-full flex flex-col gap-6 ">
-          <button onClick={() => decreaseCharge(20)} className="battery-button">
+          <button
+            onClick={() => decreaseCharge(20)}
+            className="battery-button shadow-2xl"
+          >
             Swap Tokens
           </button>
-          <button onClick={() => decreaseCharge(6)} className="battery-button">
+          <button
+            onClick={() => decreaseCharge(6)}
+            className="battery-button shadow-2xl"
+          >
             Transfer Token
           </button>
-          <button onClick={() => decreaseCharge(3)} className="battery-button">
+          <button
+            onClick={() => decreaseCharge(3)}
+            className="battery-button shadow-2xl"
+          >
             Transfer NFT
           </button>
         </div>

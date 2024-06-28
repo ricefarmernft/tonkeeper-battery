@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center items-center p-4">
+      <div className="flex justify-center items-center p-4 pt-12">
         <div className="flex flex-col justify-center text-center">
           <div className="flex justify-center">
             <Logo />
@@ -21,7 +21,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="py-6">
+      <div className="pt-6">
         <Battery />
       </div>
       {/* What is Battery */}
