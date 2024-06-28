@@ -4,11 +4,13 @@ import HowItWorks from "./components/howItWorks";
 import TonkeeperBatteryUsage from "./components/tonkeeperBatteryUsage";
 import BatteryTypewriter from "./components/batteryTypewriter";
 import FooterPage from "./components/footerPage";
+import HeaderPage from "./components/headerPage";
 
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center items-center p-4 pt-12">
+      <HeaderPage />
+      <div className="flex justify-center items-center p-4 ">
         <div className="flex flex-col justify-center text-center">
           <div className="flex justify-center">
             <Logo />
